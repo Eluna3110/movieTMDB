@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="io.software.servicecoordinator.domain.response.Movie.Results" />
+
+        <variable
+            name="movieListener"
+            type="io.software.tmdbmovie.movie.view.IMovieListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp_112"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_normal"
+        android:layout_margin="@dimen/margin_min"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_movie"
+            android:layout_width="@dimen/dp_112"
+            android:layout_height="160dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_movie"
+                style="@style/AppTheme.CardView.Basic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_min"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:background="@drawable/ic_image_example" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_marginStart="@dimen/margin_min"
+            android:id="@+id/name_movie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_movie"
+            android:text="@{movie.title}"
+            tools:text="Super Mario Bros" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_marginStart="@dimen/margin_min"
+            android:id="@+id/date_movie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_12"
+            android:layout_marginTop="@dimen/margin_min"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_movie"
+            android:text="@{movie.release_date}"
+            tools:text="Febrero 05, 2020" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">TMDBMovie</string>
+    <string name="tab_profile">Profile</string>
+    <string name="tab_movie">Movies</string>
+    <string name="tab_maps">Location</string>
+    <string name="tab_storage">Storage</string>
+    <string name="movie_title">TMDB Movies Populate</string>
+    <string name="movie_title_rated">TMDB Movies Top Rade</string>
+    <string name="maps_title">TMDB Time Zones</string>
+    <string name="storage_title">TMDB Upload Image</string>
+
+    <string name="perfil_title">Mi Perfil</string>
+    <string name="perfil_name_example">Edith Luna Galván</string>
+    <string name="perfil_edit_photo">Editar foto</string>
+
+    <string name="storage_toast">Image has been successfully uploaded to the fireStorage.</string>
+    <string name="storage_resume">Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud. Cloud Firestore also offers seamless integration with other Firebase and Google Cloud products, including Cloud Functions.</string>
+
+    <string name="error_read_firestore">Get failed with</string>
+    <string name="error_write_firestore">Error writing document</string>
+    <string name="success_write_firestore">DocumentSnapshot successfully written!</string>
+
+    <string name="profile_title">Personal Info</string>
+    <string name="profile_biography">Biography</string>
+    <string name="profile_label_birthday">Birthday</string>
+    <string name="profile_label_birthday_place">Place of Birth</string>
+    <string name="profile_label_known">Known For</string>
+    <string name="profile_label_known_credits">Known Credits</string>
+
+    <string name="upload">Subir imagen</string>
+
+    <string name="profile_notificaciones">Notificaciones</string>
+    <string name="profile_configuration">Configuración</string>
+    <string name="profile_account">Cuenta</string>
+    <string name="profile_ayuda">Ayuda</string>
+
+</resources>

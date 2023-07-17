@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.software.tmdbmovie.movie.viewmodel.MovieViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/dp_22">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="@dimen/margin_min"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_min"
+                android:layout_marginStart="@dimen/margin_normal"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/movie_title"
+                android:textStyle="bold"
+                android:textColor="@color/blue_tab"
+                android:textSize="@dimen/sp_16"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:adapter="@{viewModel.movieAdapterPopular}"
+                tools:itemCount="15"
+                tools:spanCount="3"
+                tools:listitem="@layout/item_movie"
+                app:spanCount="3"/>
+
+            <TextView
+                android:id="@+id/labelRated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_min"
+                android:layout_marginStart="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/rv_popular"
+                android:text="@string/movie_title_rated"
+                android:textStyle="bold"
+                android:textColor="@color/blue_tab"
+                android:textSize="@dimen/sp_16"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_rated"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/labelRated"
+                app:layout_constraintStart_toStartOf="parent"
+                app:adapter="@{viewModel.movieAdapterRated}"
+                tools:itemCount="15"
+                tools:spanCount="3"
+                tools:listitem="@layout/item_movie"
+                app:spanCount="3"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

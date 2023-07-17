@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.software.tmdbmovie.perfil.viewmodel.ProfileViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/margin_big">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/margin_normal"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/perfil_title"
+                android:textStyle="bold"
+                android:textColor="@color/blue_tab"
+                android:textSize="@dimen/sp_16"/>
+
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/label"
+                android:text="@string/perfil_name_example"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_18"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_movie"
+                android:layout_width="150dp"
+                android:layout_height="165dp"
+                android:layout_margin="@dimen/dp_12"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_name">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_movie"
+                    style="@style/AppTheme.CardView.Basic.Perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_image_perfil" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/label_edit_perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/perfil_edit_photo"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginStart="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/cl_movie"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textStyle="italic"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/label_edit_perfil"
+                app:layout_constraintStart_toStartOf="parent"
+                app:adapter="@{viewModel.adapterList}"
+                tools:listitem="@layout/item_list"
+                app:spanCount="3"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

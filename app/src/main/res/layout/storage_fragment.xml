@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/margin_big">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_normal">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/storage_title"
+            android:textStyle="bold"
+            android:textColor="@color/blue_tab"
+            android:textSize="@dimen/sp_16"/>
+
+        <TextView
+            android:id="@+id/labelResume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:layout_constraintTop_toBottomOf="@id/label"
+            android:text="@string/storage_resume"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintTop_toBottomOf="@id/labelResume">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/uploadImageView"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_upload_file"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="@dimen/sp_14"
+                android:text="@string/upload" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

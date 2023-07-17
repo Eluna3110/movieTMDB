@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.TMDBMovie" parent="Theme.MaterialComponents.Light.NoActionBar" />
+
+
+    <style name="TabLayout.TextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TabLayout.Basic" parent="android:Widget">
+        <item name="tabTextAppearance">@style/TabLayout.TextAppearance</item>
+    </style>
+
+    <style name="TabLayout.Basic.Inverse">
+        <item name="android:layout_gravity">top</item>
+        <item name="android:background">@drawable/drawable_tablayout</item>
+        <item name="tabIndicatorColor">@color/blue_light</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="tabTextColor">@color/white</item>
+        <item name="tabSelectedTextColor">@color/tab_select</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.CardView.Basic" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardElevation">@dimen/dp_8</item>
+        <item name="cardCornerRadius">@dimen/dp_8</item>
+    </style>
+
+
+    <style name="AppTheme.CardView.Basic.Perfil" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardElevation">@dimen/dp_4</item>
+        <item name="cardCornerRadius">@dimen/dp_6</item>
+    </style>
+
+</resources>
