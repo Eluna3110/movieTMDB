@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import io.software.tmdbmovie.R
 import io.software.tmdbmovie.datasource.Repository
 import io.software.tmdbmovie.perfil.model.Profile
-import io.software.tmdbmovie.perfil.view.ListAdapter
+import io.software.tmdbmovie.perfil.view.ListItemAdapter
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,8 +19,8 @@ class ProfileViewModel @Inject constructor(private val repository: Repository) :
     val listProfile : LiveData<MutableList<Profile>>
         get() = _listProfile
 
-    private val _adapterList = MutableLiveData<ListAdapter>()
-    val adapterList : LiveData<ListAdapter>
+    private val _adapterList = MutableLiveData<ListItemAdapter>()
+    val adapterList : LiveData<ListItemAdapter>
         get() = _adapterList
 
     private val _apiKey = MutableLiveData<String>()
@@ -52,7 +52,7 @@ class ProfileViewModel @Inject constructor(private val repository: Repository) :
         _listProfile.value?.add(Profile(R.drawable.settings,context.getString(R.string.profile_configuration)))
         _listProfile.value?.add(Profile(R.drawable.person,context.getString(R.string.profile_account)))
         _listProfile.value?.add(Profile(R.drawable.help,context.getString(R.string.profile_ayuda)))
-        _adapterList.value = ListAdapter(_listProfile.value!!)
+        _adapterList.value = ListItemAdapter()
 
     }
 }

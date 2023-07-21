@@ -12,7 +12,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.squareup.picasso.Picasso
 import io.software.tmdbmovie.databinding.PerfilFragmentBinding
-import io.software.tmdbmovie.movie.MovieError
 import io.software.tmdbmovie.perfil.viewmodel.ProfileViewModel
 
 class ProfileFragment : Fragment()
@@ -37,6 +36,11 @@ class ProfileFragment : Fragment()
         binding.viewModel = viewModel
 
         this.context?.let { viewModel.initAdapter(it) }
+
+        viewModel.listProfile.observe(viewLifecycleOwner, Observer{ list ->
+            viewModel.adapterList.value?.submitList(list)
+        })
+
 
         viewModel.uri.observe(viewLifecycleOwner, Observer { fileUri ->
             Picasso.with(this.context)
